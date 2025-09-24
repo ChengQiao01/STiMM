@@ -58,6 +58,7 @@ pip install -r requirements.txt
 下载预训练模型后，可直接运行。
 ```bash
 python Test_Seis_Time_Former.py
+```
 可见预训练结果。
 
 ### 训练
@@ -92,4 +93,5 @@ ViT 风格嵌入的附加参数位于 `src/ViT/config_vit_hf.py`。
 - 将下载模型放置在 '/models/' 中
 
 ---
+
 
