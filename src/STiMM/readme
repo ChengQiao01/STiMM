@@ -1,0 +1,18 @@
+Time_Seriosformer_v1_1:
+Input: [B, 1, T, X]
+Embedding Token: [T//win_T, win_T, X] --> [T//win_T, hidden_size]  (hidden_size = X * win_T)
+Position Embedding: Learnable absolute embedding
+Token: Masked 0 bool_masked_pos
+Encoder: ViT
+Decoder: UpsampleOneStep + PixelShuffle1D_Time
+Loss: Masked L1Loss
+
+Time_Seriosformer_v1_2:
+Input: [B, 1, T, X]
+Embedding Token: [T//win_T, win_T, X] --> [T//win_T, hidden_size]  (hidden_size = X * win_T)
+Position Embedding: Learnable absolute embedding
+Token: Masked 0 bool_masked_pos
+Encoder: ViT
+FFN: dense --> TemporalGateFFN
+Decoder: conv_before_upsample + Upsample + PixelShuffle1D_Time + final_conv
+Loss: Not-Masked L1Loss
