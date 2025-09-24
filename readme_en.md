@@ -4,36 +4,6 @@
 
 ![Framework of STiMM](docs/method.png)
 
-## Project Structure
-STiMM/
-├─ data/
-│ └─ test_dataset.mat # Example dataset
-├─ models/
-│ └─ ckpt_STiMM.pth # Example / pretrained weights
-├─ results/
-│ └─ Loss/ # Training curves / logs (auto-generated)
-├─ scripts/
-│ ├─ activations_hf.py
-│ ├─ DataLoad_Train.py # Data loading & mask generation
-│ ├─ PixelShuffle1D.py
-│ ├─ scheduler.py
-│ ├─ tester.py
-│ └─ trainer.py
-├─ src/
-│ ├─ STiMM/
-│ │ ├─ readme
-│ │ ├─ Time_Series_Config.py # Global configuration (main place to modify)
-│ │ ├─ Time_Series_Embedding.py
-│ │ ├─ Time_Seriosformer_v1_1.py
-│ │ └─ Time_Seriosformer_v1_2.py
-│ └─ ViT/
-│ ├─ config_vit_hf.py
-│ └─ ViT_seis_emb.py
-├─ Train_Seis_Time_Former.py # Training entry
-├─ Test_Seis_Time_Former.py # Testing / inference entry
-├─ requirements.txt
-└─ readme.md
-
 ---
 
 ## Installation
