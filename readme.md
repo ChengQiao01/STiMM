@@ -1,7 +1,7 @@
 # STiMM — Seismic Time-series Masked Modeling
 > 基于 Transformer 的**地震时间序列**掩码建模/重建框架（Seismic Time-series Masked Modeling, **STiMM**）。  
 > **开箱即用**：含示例数据 `data/test_dataset.mat` 与示例权重 `models/ckpt_STiMM.pth`。
-
+! [STiMM的基本框架] (docs/method.png)
 
 ## 目录结构
 ```
@@ -93,5 +93,6 @@ ViT 风格嵌入的附加参数位于 `src/ViT/config_vit_hf.py`。
 - 将下载模型放置在 '/models/' 中
 
 ---
+
 
 
