@@ -51,3 +51,37 @@ pip install -r requirements.txt
 -**Convention**:
  -Model input tensor shape: (B, 1, T, X), where T is the time dimension, X is the spatial dimension.
 
+## Quick Start
+With the pretrained model downloaded, you can directly run:
+```bash
+python Test_Seis_Time_Former.py
+```
+to see pretrained reconstruction results.
+
+### Training
+Run with the default config and sample dataset:
+```bash
+python Train_Seis_Time_Former.py
+```
+
+### Testing
+Run with sample weights and dataset:
+```bash
+python Test_Seis_Time_Former.py
+```
+The script will call scripts/tester.py for evaluation and visualization, saving outputs to results/.
+> If you replace weights/data, please modify paths in the script or adjust in the config file.
+> Current version requires input shape [B, 1, 2048, 128].
+
+---
+
+## Configuration
+Centralized in 'src/STiMM/Time_Series_Config.py':
+
+---
+
+## Models & Releases
+- Pretrained model downloadhttps://github.com/ChengQiao01/STiMM/releases/download/v0.1.1/ckpt_STiMM.pth
+- Place the downloaded weights into the '/models/' directory.
+
+---
