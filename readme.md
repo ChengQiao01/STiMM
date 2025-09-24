@@ -47,24 +47,24 @@ pip install -r requirements.txt
 ---
 
 ## 数据（Data）
-- **示例数据**：`data/test_dataset.mat` 已随仓库提供，用于跑通流程。  
+- **示例数据**：部分测试数据集`data/test_dataset.mat` 已随仓库提供。  
 - **自有数据**：请参考 `scripts/DataLoad_Train.py` 的读取逻辑修改变量名/键值。  
 - **约定**：
-  - 张量形状为 `(..., T)`，**最后一维为时间 `T`**；
-  - `T % patch_size == 0`（沿 `T` 切 patch），相关参数见 `src/STiMM/Time_Series_Config.py`；
-  - 若是二维剖面常见为 `(H, T)` 或 `(C, T)`；三维体可先在 DataLoader 中折叠/展平到以 `T` 为最后一维的形态。
+  - 模型输入张量形状为 `(B, 1, T, X)`，T是时间维度，X是空间维度。
 
 ---
 
 ## 快速开始（Quick Start）
+下载预训练模型后，可直接运行。
+```bash
+python Test_Seis_Time_Former.py
+可见预训练结果。
 
 ### 训练
 使用仓库内默认配置与示例数据：
 ```bash
 python Train_Seis_Time_Former.py
 ```
-> 常用超参（`time_num / patch_size / mask_ratio / batch_size / lr / epochs` 等）在  
-> `src/STiMM/Time_Series_Config.py` 中集中管理。
 
 ### 测试 / 推理
 使用示例权重与示例数据：
@@ -73,6 +73,7 @@ python Test_Seis_Time_Former.py
 ```
 脚本会调用 `scripts/tester.py` 进行评测与可视化，输出保存到 `results/`。  
 > 若你替换权重/数据，请按脚本注释修改路径或在配置中调整。
+> 可尝试自行替换数据测试，当前版本中，数据需要保持[B, 1, 2048, 128]规模。
 
 ---
 
@@ -91,3 +92,4 @@ ViT 风格嵌入的附加参数位于 `src/ViT/config_vit_hf.py`。
 - 将下载模型放置在 '/models/' 中
 
 ---
+
